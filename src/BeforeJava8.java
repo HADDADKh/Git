@@ -10,8 +10,8 @@ public class BeforeJava8 {
                 new Person("mkyong", 30),
                 new Person("jack", 20),
                 new Person("lawrence", 40),
-                new Person("HADDAD", 40),
-                new Person("HADDAD", 50)
+                new Person("HADDAD", 50),
+                new Person("HADDAD", 40)
         );
 
         Person result = getStudentByName(persons, "jack");
@@ -23,9 +23,22 @@ public class BeforeJava8 {
         System.out.println(result2.getAge());
         Person result3 = getStudentByNameeee(persons, "HADDAD");
         System.out.println(result3.getAge());
+        getStudentmap(persons);
+       
     }
 
-    private static Person getStudentByNameeee(List<Person> persons, String name) {
+    private static void getStudentmap(List<Person> persons) {
+		
+    	int name= persons.stream().filter(elemt-> "HADDAD".equals(elemt.getName()))
+    			.map(Person::getAge).findFirst().orElse(null);
+    	System.out.println("name = " + name);
+    	
+    	List<String> collect = persons.stream().map(Person::getName).collect(Collectors.toList());
+    	collect.forEach(System.out::println);
+    	
+	}
+
+	private static Person getStudentByNameeee(List<Person> persons, String name) {
     	Person p1= persons.stream().filter(elemt-> {
     		if (name.equals(elemt.getName()) && 40==elemt.getAge()) {
     			return true;
