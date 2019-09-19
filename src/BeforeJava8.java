@@ -40,7 +40,7 @@ public class BeforeJava8 {
 
 	private static Person getStudentByNameeee(List<Person> persons, String name) {
     	Person p1= persons.stream().filter(elemt-> {
-    		if (name.equals(elemt.getName()) && 100==elemt.getAge()) {
+    		if (name.equals(elemt.getName()) && 1000==elemt.getAge()) {
     			return true;
     		}
     	return false; 
