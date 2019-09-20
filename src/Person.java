@@ -1,17 +1,29 @@
+import java.util.Optional;
 
 public class Person {
 	
 
 	    private String name;
 	    private int age;
+	    private Optional<Adresse> adresse;
 
-	    public Person(String name, int age) {
-	        this.name = name;
+	
+
+		public Person(String name2, int age2, Optional<Adresse> adresse2) {
+			this.name = name;
 	        this.age = age;
-	    }
+	        this.adresse = adresse2;		}
 
 		public String getName() {
 			return name;
+		}
+
+		public Optional<Adresse> getAdresse() {
+			return adresse;
+		}
+
+		public void setAdresse(Optional<Adresse> adresse) {
+			this.adresse = adresse;
 		}
 
 		public void setName(String name) {
