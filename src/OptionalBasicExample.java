@@ -7,7 +7,9 @@ public class OptionalBasicExample {
     	Optional<Adresse> oad=Optional.empty();
     	Person p = new Person("Robin",4,oad); 
     	Optional<Adresse> aa =  p.getAdresse(); 
-    	aa.ifPresent(System.out::println);
+    	aa.isPresent();
+    	System.out.println(aa.isPresent());
+
 
     }
 
