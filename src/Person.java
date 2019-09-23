@@ -5,24 +5,31 @@ public class Person {
 
 	    private String name;
 	    private int age;
-	    private Optional<Adresse> adresse;
+	    private String adresse;
 
-	
-
-		public Person(String name2, int age2, Optional<Adresse> adresse2) {
+		public static void main(String args[]) 
+		{
+			Person p = new Person("ff", 5, "adresse2");
+			System.out.println(p);
+		}
+		public Person(String name2, int age2, String string) {
 			this.name = name;
 	        this.age = age;
-	        this.adresse = adresse2;		}
+	        this.adresse = string;		}
 
+		@Override
+		public String toString() {
+			return "Person [name=" + name + ", age=" + age + ", adresse=" + adresse + "]";
+		}
 		public String getName() {
 			return name;
 		}
 
-		public Optional<Adresse> getAdresse() {
+		public String getAdresse() {
 			return adresse;
 		}
 
-		public void setAdresse(Optional<Adresse> adresse) {
+		public void setAdresse(String adresse) {
 			this.adresse = adresse;
 		}
 
